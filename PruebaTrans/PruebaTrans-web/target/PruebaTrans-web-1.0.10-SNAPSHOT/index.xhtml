@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+          <p:panel id="panel" header="TRANSACCIONALES">
+             <h:panelGrid columns="2"  cellpadding="5" styleClass="ui-grid">
+                <p:outputLabel value="Editorial" for="id" styleClass="requiredLbl"/>
+                <p:autoComplete id="id" label="id_ns" value="#{controller.editorial}" required="true" size="25">
+                </p:autoComplete>
+                 
+                <p:outputLabel value="Libro" for="libro" styleClass="requiredLbl"/>
+                <p:autoComplete id="libro" label="libro" value="#{controller.autor}" required="true" size="25">
+                </p:autoComplete>
+                    
+                <p:outputLabel value="Autor" for="autor" styleClass="requiredLbl"/>
+                <p:autoComplete id="autor" label="autor" value="#{controller.libro}" required="true" size="25">
+                </p:autoComplete>
+            </h:panelGrid>  
+            <h:panelGrid columns="6"  cellpadding="5" styleClass="ui-grid">
+                             
+                 <p:commandButton value="T not_support" action="#{controller.agregarTransNotSup()}" update="@form" />
+                 <p:commandButton value="T support"  action="#{controller.agregarTransSup()}" update="@form" />
+                 <p:commandButton value="T requires" action="#{controller.agregarTransReq()}" update="@form" />
+                 <p:commandButton value="T requires_new"  action="#{controller.agregarTransReqNew()}" update="@form"/>
+                 <p:commandButton value="T mandatory" action="#{controller.agregarTransMand()}" update="@form" />
+                 <p:commandButton value="T never" action="#{controller.agregarTransNever()}" update="@form" />
+         </h:panelGrid> 
+       </p:panel>
+    </h:form>
+        <h:form>
+          <p:panel id="panel" header="NO TRANSACCIONALES BASE DE DATOS">
+             <h:panelGrid columns="2"  cellpadding="5" styleClass="ui-grid">
+                <p:outputLabel value="Editorial" for="id" styleClass="requiredLbl"/>
+             <p:autoComplete id="id" label="id_ns" value="#{controller.id}" required="true" size="25">
+                </p:autoComplete>
+                 
+                <p:outputLabel value="Libro" for="libro" styleClass="requiredLbl"/>
+                <p:autoComplete id="libro" label="libro" value="#{controller.autor}" required="true" size="25">
+                </p:autoComplete>
+                    
+                <p:outputLabel value="Autor" for="autor" styleClass="requiredLbl"/>
+                <p:autoComplete id="autor" label="autor" value="#{controller.libro}" required="true" size="25">
+                </p:autoComplete>
+            </h:panelGrid>  
+            <h:panelGrid columns="6"  cellpadding="5" styleClass="ui-grid">
+                            
+            <p:commandButton value="not support" action="#{controller.notsupport()}" update="@form" />
+            <p:commandButton value="support" action="#{controller.supports()}" update="@form" />
+            <p:commandButton value="requires" action="#{controller.request()}" update="@form" />
+            <p:commandButton value="requires new" action="#{controller.requestnew()}" update="@form" />
+            <p:commandButton value="mandatory" action="#{controller.mandatory()}" update="@form" />
+            <p:commandButton value="never" action="#{controller.never()}" update="@form" />
+               </h:panelGrid> 
+       </p:panel>
+    </h:form>
+        <h:form>
+          <p:panel id="panel" header="NO TRANSACCIONALES LOGICA">
+             <h:panelGrid columns="2"  cellpadding="5" styleClass="ui-grid">
+                <p:outputLabel value="Nombre" for="id" styleClass="requiredLbl"/>
+                <p:autoComplete id="id" label="id_ns" value="#{controllerl.nombre}" required="true" size="25">
+                </p:autoComplete>
+                 
+                <p:outputLabel value="Apellido" for="libro" styleClass="requiredLbl"/>
+                <p:autoComplete id="libro" label="libro" value="#{controllerl.apellido}" required="true" size="25">
+                </p:autoComplete>
+                    
+                <p:outputLabel value="Edad" for="autor" styleClass="requiredLbl"/>
+                <p:autoComplete id="autor" label="autor" value="#{controllerl.edad}" required="true" size="25">
+                </p:autoComplete>
+            </h:panelGrid>  
+            <h:panelGrid columns="6"  cellpadding="5" styleClass="ui-grid">
+                            
+                <p:commandButton value="not support" action="#{controllerl.crearSP()}" update="@form" />
+            <p:commandButton value="support" action="#{controllerl.crearS()}" update="@form" />
+            <p:commandButton value="requiress" action="#{controllerl.crearR()}" update="@form" />
+            <p:commandButton value="requires new" action="#{controllerl.crearRN()}" update="@form" />
+            <p:commandButton value="mandatory" action="#{controllerl.crearM()}" update="@form" />
+            <p:commandButton value="never" action="#{controllerl.crearN()}" update="@form" />
+               </h:panelGrid> 
+       </p:panel>
+       </h:form>
+    </h:body>
+</html>
+

@@ -1,0 +1,11 @@
+universidad\Transaccion.class
+Interfaces\LibroFacadeLocal.class
+Beans\AbstractFacade.class
+Entitys\Autor.class
+Entitys\Libro.class
+Beans\AutorFacade.class
+universidad\NewSessionBean.class
+Beans\LibroFacade.class
+Interfaces\AutorFacadeLocal.class
+universidad\TransaccionLocal.class
+universidad\TransLocal.class
